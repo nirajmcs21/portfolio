@@ -1,0 +1,155 @@
+:root {
+    --bg-color: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --accent-color: #e5d1c5; /* Soft beige from your image */
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 40px 20px;
+}
+
+/* Header & Nav */
+header {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--accent-color); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--text-main); }
+
+.cta-btn {
+    background: var(--accent-color);
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Portfolio Grid */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card.alt-color {
+    background: #222;
+}
+
+.featured {
+    grid-row: span 2;
+    background: var(--accent-color);
+    color: #000;
+}
+
+.featured .arrow { color: #000; border-color: #000; }
+.featured p { color: #333; }
+
+/* Card Content */
+.card-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card-content p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+
+.arrow {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--text-dim);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 38px;
+    transition: 0.3s;
+}
+
+/* Hover States */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover .arrow {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+    transform: rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .featured { grid-row: span 1; }
+    .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,150 @@
+/* Contact Section Layout */
+.contact-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.contact-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    font-size: 3.1rem;
+}
+
+.contact-header span {
+    color: var(--accent-color);
+}
+
+.contact-header p {
+    color: var(--text-dim);
+    margin-top: 15px;
+}
+
+/* Container for Form + Socials */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Form Styling */
+.contact-form {
+    background: #eca6a6;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    
+    letter-spacing: 1px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #0f0f0f;
+    border: 1px solid #aca8a8;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.submit-btn {
+    width: 25%;
+    padding: 15px;
+    background: var(--text-main);
+    color: #000;
+    border: 2px solid blanchedalmond;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    
+}
+
+.submit-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.form-note {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Social Buttons Tile Styling */
+.social-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-tile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.social-tile i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.social-tile:hover {
+    transform: translateX(10px);
+    background: #252525;
+    border-color: var(--accent-color);
+}
+
+.social-tile.email i { color: #ea4335; }
+.social-tile.instagram i { color: #e4405f; }
+.social-tile.linkedin i { color: #0a66c2; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+}
